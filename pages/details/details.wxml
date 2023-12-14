@@ -1,0 +1,22 @@
+<!-- detail.wxml -->
+<navigation-bar title="古迹详情" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<scroll-view class="scroll-view-container" scroll-y="true">
+  <view>
+    <image class="image" src="{{gujiItem.image}}" mode="aspectFill"></image>
+    <view class="table-row">
+      <view class="table-cell title-cell">
+        <text class="title">{{gujiItem.name}}</text>
+      </view>
+      <view class="table-cell button-cell">
+        <navigator url="{{gujiItem.link}}">
+          <button class="mini-btn" type="primary" size="mini" form-type="submit" style="font-size: 30rpx;">
+            知晓更多详情
+          </button>
+        </navigator>
+      </view>
+    </view>
+    <text class="details">来源：{{gujiItem.origin}} \n\n</text>
+    <text class="details">{{gujiItem.description}} \n\n</text>
+    <text class="details">{{gujiItem.details}}</text>
+  </view>
+</scroll-view>

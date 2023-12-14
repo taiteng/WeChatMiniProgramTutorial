@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<navigation-bar title="古迹" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="search-bar-container">
+  <input class="search-input" placeholder="搜寻..." bindinput="onSearchInput"></input>
+</view>
+
+<text class="popup-text" bindtap="toggleImagePopup">显示地图</text>
+<view wx:if="{{showImagePopup}}" class="image-popup" bindtap="hideImagePopup">
+  <image class="popup-image" src="{{selectedImage}}" mode="aspectFill"></image>
+</view>
+
+<scroll-view class="scroll-view-container" scroll-y="true">
+  <view wx:for="{{gujiData}}" wx:key="id">
+    <navigator url="./../details/details?id={{item.id}}">
+      <view class="card">
+        <image class="card-image" src="{{item.image}}" mode="aspectFill"></image>
+        <view class="card-details">
+          <text class="card-title">{{item.name}} \n</text>
+          <text class="card-description">{{item.description}}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view wx:if="{{gujiData.length === 0 && searchQuery !== ''}}">
+    <text>No results found for "{{searchQuery}}"</text>
+  </view>
+</scroll-view>
