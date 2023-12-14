@@ -8,7 +8,7 @@ page {
 
 .scroll-view-container {
   padding: 20rpx;
-  height: calc(100% - 150rpx);
+  height: calc(100% - 270rpx);
   box-sizing: border-box;
 }
 
